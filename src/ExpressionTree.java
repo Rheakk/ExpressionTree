@@ -18,12 +18,12 @@ enum Operator {
     }
 }
 
-public class ExpressionTree {
+public class ExpressionTree implements ExpressionTreeInterface {
 
     LinkedList treeStack = new LinkedList();
 
-    public ExpressionTree(String exp) {
-        StringTokenizer tokExp = new StringTokenizer(exp);
+    public ExpressionTree(String expression) {
+        StringTokenizer tokExp = new StringTokenizer(expression);
         while (tokExp.hasMoreTokens()) {
             ExpressionNode n = new ExpressionNode(tokExp.nextToken());
             if (n.isOperator) {
